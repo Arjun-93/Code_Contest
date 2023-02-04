@@ -9,21 +9,13 @@ public class IMDB {
         while(t-->0){
             int N = sc.nextInt();
             int X = sc.nextInt();
-            int space[] = new int[N];
-            int Rating[] = new int[N];
-            int i=0;
-            while(N-->0){
-                space[i] = sc.nextInt();
-                Rating[i] = sc.nextInt();
-                i++;
+            int Y = sc.nextInt();
+
+            if(N<= X*Y){
+                System.out.println("YES");
+            }else{
+                System.out.println("NO");
             }
-            int M =0;
-            for(int j=0; j<space.length; j++){
-                if(space[j]<=X && Rating[j]>M){
-                    M = Rating[j];
-                }
-            }
-            System.out.println(M);
         }
     }
 }
