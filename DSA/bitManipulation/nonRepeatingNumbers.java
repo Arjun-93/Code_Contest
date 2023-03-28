@@ -3,8 +3,6 @@ package DSA.bitManipulation;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.print.attribute.HashAttributeSet;
-
 public class nonRepeatingNumbers {
     public static void main(String[] args) {
         int[] arr = {1,2,3,2,1,4};
@@ -30,14 +28,20 @@ public class nonRepeatingNumbers {
 
     public static int[] findSingleNumber(int[] nums){
         int[] arr = new int[2];
-
         Map<Integer, Integer> mp = new HashMap<Integer, Integer>();
-        int count =1;
         for (int i =0; i<nums.length; i++){
-            if()
+            mp.put(nums[i], mp.getOrDefault(nums[i], 0)+1);
         }
-
-
+        System.out.println(mp);
+        int k = 0;
+        for(int j=0; j<nums.length; j++){
+            int temp = mp.get(nums[j]);
+            if(temp==1){
+                System.out.print(nums[j]);
+                arr[k] = nums[j]; 
+                k++;
+            }
+        }
         return arr;
     }
 }
