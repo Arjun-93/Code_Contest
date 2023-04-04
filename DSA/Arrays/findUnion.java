@@ -2,8 +2,6 @@ package DSA.Arrays;
 
 import java.util.HashSet;
 
-import javax.print.attribute.HashAttributeSet;
-
 public class findUnion {
     public static void main(String[] args) {
         
@@ -12,6 +10,8 @@ public class findUnion {
         HashSet<Integer> ans = new HashSet<>();
         for(int i= 0; i<a.length; i++){
             ans.add(a[i]);
+            System.out.println("checking");
         }
     }
+
 }
