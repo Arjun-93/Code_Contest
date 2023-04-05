@@ -1,18 +1,31 @@
 package DSA.Arrays;
-
 public class getMinDIff {
+
     public static void main(String[] args) {
-        int  k =2;
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-        int[] nums = {1};
-        for (int i =0; i< nums.length ; i++){
-            if(nums[i]<min){
-                min = nums[i];
-            }else{
-                max = nums[i];
+        int[] nums = {1,2,3,4};
+        int k = 2;
+        int n = nums.length;
+        int maxheight = Arrays.stream(nums).min().getAsInt();
+        int minHeight = Arrays.stream(nums).max().getAsInt();;
+        int initialDiff = maxheight - minHeight;
+        int avgHeight = (maxheight + minHeight)/2;
+
+        for (int i=0; i<n; i++){
+            if(nums[i] <= avgHeight){
+                nums[i] += k;
+            }
+            else{
+                nums[i] -= k;
             }
         }
-        System.out.println(max - (2*k + min));
+        int newMinHeight = Arrays.stream(arr).min().getAsInt();
+        int newMaxHeight = Arrays.stream(arr).max().getAsInt();
+        int newDiff = newMaxHeight - newMinHeight;
+
+        if(newDiff > initialDiff){
+            return initialDiff;
+        } else {
+            return newDiff;
+        }
     }
 }
