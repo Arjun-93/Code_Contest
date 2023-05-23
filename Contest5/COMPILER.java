@@ -1,5 +1,8 @@
 package Contest5;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -27,5 +30,9 @@ public class COMPILER {
             }
             System.out.println(count);
         }
+
+        List<Integer> list = new ArrayList<>();
+
+        Collections.max(list);
     }
 }
